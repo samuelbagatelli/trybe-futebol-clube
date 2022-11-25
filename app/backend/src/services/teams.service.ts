@@ -8,4 +8,10 @@ export default class TeamService {
 
     return teams;
   }
+
+  async getById(id: string) {
+    const team = await this.teams.findByPk(id);
+
+    return team;
+  }
 }

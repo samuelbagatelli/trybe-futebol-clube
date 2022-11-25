@@ -1,9 +1,9 @@
 import * as express from 'express';
-import { TeamController } from '../controllers';
+import { TeamsController } from '../controllers';
 
 const router = express.Router();
 
-const teamsController = new TeamController();
+const teamsController = new TeamsController();
 
 router.get(
   '/',

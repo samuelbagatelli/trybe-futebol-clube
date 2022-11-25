@@ -1,9 +1,9 @@
 import Teams from '../database/models/TeamsModel';
 
-export default class TeamService {
+export default class TeamsService {
   constructor(public teams = Teams) {}
 
-  async getAll(): Promise<Teams[]> {
+  async getAll() {
     const teams = await this.teams.findAll();
 
     return teams;

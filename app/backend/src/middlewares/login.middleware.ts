@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi = require('joi');
-import ValidateJWT from '../auth';
 
 export default function loginMiddlware(req: Request, res: Response, next: NextFunction) {
   const customMessage = 'All fields must be filled';
@@ -20,9 +19,3 @@ export default function loginMiddlware(req: Request, res: Response, next: NextFu
 
   next();
 }
-
-export const loginValidate = (req: Request, res: Response, next: NextFunction) => {
-  ValidateJWT.token(req, res, next);
-
-  next();
-};

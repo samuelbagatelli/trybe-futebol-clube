@@ -42,4 +42,24 @@ export default class MatchesService {
 
     return matches;
   }
+
+  async createMatch(matchInfo: Matches) {
+    const match = await this.matches.create({
+      ...matchInfo,
+      inProgress: true,
+    });
+
+    return match;
+  }
+
+  async finishMatch(id: number): Promise<void> {
+    await this.matches.update(
+      { inProgress: false },
+      {
+        where: {
+          id,
+        },
+      },
+    );
+  }
 }

@@ -22,4 +22,20 @@ export default class ValidateJWT {
       return res.status(401).json({ message: 'Expired or invalid token' });
     }
   }
+
+  static async matchToken(req: Request, res: Response, next: NextFunction) {
+    const token = req.headers.authorization;
+
+    if (!token) return res.status(401).json({ message: 'Token not found' });
+
+    try {
+      const decoded: jwt.JwtPayload | Users | string = jwt.verify(token, secret);
+
+      req.body.user = decoded;
+
+      next();
+    } catch (e) {
+      return res.status(401).json({ message: 'Token must be a valid token' });
+    }
+  }
 }

@@ -24,6 +24,11 @@ router.post(
 );
 
 router.patch(
+  '/:id',
+  (req, res) => matchesController.updateMatch(req, res),
+);
+
+router.patch(
   '/:id/finish',
   (req, res) => matchesController.finishMatch(req, res),
 );

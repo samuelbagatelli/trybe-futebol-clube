@@ -62,4 +62,24 @@ export default class MatchesService {
       },
     );
   }
+
+  async getMatch(id: number) {
+    const match = await this.matches.findByPk(id);
+
+    return match;
+  }
+
+  async updateMatch(id: number, homeTeamGoals: number, awayTeamGoals: number) {
+    await this.matches.update(
+      {
+        homeTeamGoals,
+        awayTeamGoals,
+      },
+      {
+        where: {
+          id,
+        },
+      },
+    );
+  }
 }

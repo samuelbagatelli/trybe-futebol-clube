@@ -1,4 +1,4 @@
-import Users from '../database/models/UsersModel';
+import Users from '../database/models/Users.model';
 
 export default class UserService {
   constructor(public users = Users) {}

@@ -1,5 +1,5 @@
-import Teams from '../database/models/TeamsModel';
-import Matches from '../database/models/MatchesModel';
+import Teams from '../database/models/Teams.model';
+import Matches from '../database/models/Matches.model';
 
 export default class MatchesService {
   constructor(public matches = Matches) { }

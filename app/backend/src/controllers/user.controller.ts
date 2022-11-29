@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import * as jwt from 'jsonwebtoken';
 import { compareSync } from 'bcryptjs';
 
-import Users from '../database/models/UsersModel';
+import Users from '../database/models/Users.model';
 import UserService from '../services/user.service';
 
 const secret = process.env.JWT_SECRET || 'jwt_secret';

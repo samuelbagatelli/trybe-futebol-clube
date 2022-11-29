@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi = require('joi');
 import { Op } from 'sequelize';
-import Teams from '../database/models/TeamsModel';
+import Teams from '../database/models/Teams.model';
 
 export default function matchMiddlware(req: Request, res: Response, next: NextFunction) {
   const customMessage = 'It is not possible to create a match with two equal teams';
